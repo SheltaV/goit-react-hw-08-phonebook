@@ -19,7 +19,7 @@ const contactSlice = createSlice({
     extraReducers: {
     [fetchContacts.pending]: pending,
     [fetchContacts.fulfilled](state, action) {
-        // state.list = action.payload
+        state.list = action.payload;
         state.error = null
         state.isLoading = false
     },
@@ -27,7 +27,6 @@ const contactSlice = createSlice({
     [addContact.pending]: pending,
     [addContact.fulfilled](state, action) {
         state.list.push(action.payload)
-        // state.list.phone = action.payload.number
         state.error = null
         state.isLoading = false
     },
@@ -46,8 +45,7 @@ const contactSlice = createSlice({
 
 const persistConfig = {
   key: 'contacts',
-    storage,
-//   whitelist: [token]
+    storage
 }
 
 export const persistedContactReducer = persistReducer(persistConfig, contactSlice.reducer)
