@@ -1,9 +1,10 @@
 import { Helmet } from 'react-helmet';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 import { ContactList } from "components/ContactList/ContactList";
 import { Filter } from "components/Filter/Filter";
 import { ContactForm } from "components/Form/Form";
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 
 

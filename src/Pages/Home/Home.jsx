@@ -1,7 +1,9 @@
+import { Hello } from "./Home.styled";
+
 export default function Home() {
     return (
-        <div>
-            hello
-        </div>
+        <Hello>
+            You are welcome to the book of contacts!
+        </Hello>
     )
 }

@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./operations";
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+
+import { fetchContacts, addContact, deleteContact } from "./operations";
 
 const pending = state => {state.isLoading = true};
 const rejected = (state, action) => {

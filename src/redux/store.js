@@ -1,17 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
+import storage from 'redux-persist/lib/storage';
+import {
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  persistReducer,
+} from 'redux-persist';
+
 import { filterReducer } from "./filterReducer";
 import { persistedContactReducer } from "./contactReducer";
-import {
-    persistStore,
-    FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER,
-    persistReducer,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import { authReducer } from "./Auth/authSlice";
 
 const authPersistConfig = {

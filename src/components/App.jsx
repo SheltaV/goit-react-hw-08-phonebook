@@ -1,11 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout';
 import { lazy, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
+
+import { GlobalStyle } from "./GlobalStyles/globalStyles";
+import { Layout } from './Layout';
 import { refreshUser } from 'redux/Auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { Loader } from './Loader/Loader';
 
 const Home = lazy(() => import('../Pages/Home/Home'));
 const Register = lazy(() => import('../Pages/Register/Register'));
@@ -20,8 +24,9 @@ export const App = () => {
     dispatch(refreshUser())
   }, [dispatch])
 
-  return (
-    !isRefreshing && (
+  return isRefreshing ? (
+    <Loader/>
+  ) : (
     <div>
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -30,7 +35,8 @@ export const App = () => {
           <Route path='/login' element={<RestrictedRoute component={<Login/>} redirectTo='/contacts' />} />
           <Route path='/contacts' element={<PrivateRoute component={<Contacts/>} redirectTo='/login' />} />
         </Route>  
-      </Routes>
+        </Routes>
+        <GlobalStyle />
+        <Toaster position="top-right" />
     </div>)
-  )
 };
