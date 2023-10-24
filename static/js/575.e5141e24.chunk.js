@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[575],{5575:function(e,t,n){n.r(t),n.d(t,{default:function(){return u}});var o,r=n(168),c=n(5867).ZP.h1(o||(o=(0,r.Z)(["\ntext-align: center;\nfont-weight: 600;\nfont-size: 40px;\ncolor: var(--main-color);\n"]))),a=n(184);function u(){return(0,a.jsx)(c,{children:"You are welcome to the book of contacts!"})}}}]);
+//# sourceMappingURL=575.e5141e24.chunk.js.map
